@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %}Главная - MUK Клиника{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Добро пожаловать в MUK Клиника</h1>
+        <p class="lead text-muted">Информационная система для управления медицинским центром</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-3 col-sm-6">
+            <a href="/doctors/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-person-badge fs-1 text-primary mb-3"></i>
+                        <h5 class="card-title text-dark">Врачи</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/patients/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-people fs-1 text-secondary mb-3"></i>
+                        <h5 class="card-title text-dark">Пациенты</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/appointments/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check fs-1 text-success mb-3"></i>
+                        <h5 class="card-title text-dark">Приемы</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/reviews/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-chat-dots fs-1 text-warning mb-3"></i>
+                        <h5 class="card-title text-dark">Отзывы</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/consultations/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-person-lines-fill fs-1 text-info mb-3"></i>
+                        <h5 class="card-title text-dark">Консультации</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/messages/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-envelope fs-1 text-dark mb-3"></i>
+                        <h5 class="card-title text-dark">Сообщения</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/prescriptions/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-file-earmark-medical fs-1 text-primary mb-3"></i>
+                        <h5 class="card-title text-dark">Рецепты</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a href="/payments/" class="text-decoration-none">
+                <div class="card shadow-lg border-0 text-center h-100">
+                    <div class="card-body">
+                        <i class="bi bi-credit-card fs-1 text-danger mb-3"></i>
+                        <h5 class="card-title text-dark">Платежи</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="text-center py-4">
+    <h5 class="mb-3">Свяжитесь с нами:</h5>
+    <a href="https://wa.me/996705888086" target="blank" class="mx-2 text-success fs-3">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="https://t.me/adyltm" target="blank" class="mx-2 text-primary fs-3">
+        <i class="bi bi-telegram"></i>
+    </a>
+    <a href="https://instagram.com/adyltime" target="blank" class="mx-2 text-danger fs-3">
+        <i class="bi bi-instagram"></i>
+    </a>
+</div>
+<div class="ekg-container">
+    <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <polyline class="ekg-line" points="
+            0,50 50,50 60,30 70,70 80,50 130,50 140,30 150,70 160,50
+            210,50 220,30 230,70 240,50 290,50 300,30 310,70 320,50
+            370,50 380,30 390,70 400,50 450,50 460,30 470,70 480,50 1000,50
+        " />
+    </svg>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Отзывы</h2>
+    <div class="row">
+        {% for review in reviews %}
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Доктор: {{ review.doctor.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Пациент: {{ review.patient.username }}</h6>
+                    <p class="card-text">Рейтинг: <strong>{{ review.rating }}</strong></p>
+                    <p class="card-text">Комментарий: {{ review.comment }}</p>
+                    <p class="card-text"><small class="text-muted">Дата: {{ review.created_at|date:"d.m.Y H:i" }}</small></p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Пока нет отзывов.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MUK Project{% endblock %}</title>
+
+    <!-- Загрузка статических файлов -->
+    {% load static %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">MUK Project</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/doctors/">Doctors</a></li>
+                <li class="nav-item"><a class="nav-link" href="/patients/">Patients</a></li>
+                <li class="nav-item"><a class="nav-link" href="/appointments/">Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="/reviews/">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="/consultations/">Consultations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/messages/">Messages</a></li>
+                <li class="nav-item"><a class="nav-link" href="/prescriptions/">Prescriptions</a></li>
+                <li class="nav-item"><a class="nav-link" href="/payments/">Payments</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block content %}{% endblock %}
+</div>
+<style>
+body {
+    background-color: white;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.ekg-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: white;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.ekg-container svg {
+    width: 100%;
+    height: 100px;
+}
+
+.ekg-line {
+    fill: none;
+    stroke: #007bff; /* Синий цвет */
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: ekgPulse 2s linear infinite;
+}
+
+@keyframes ekgPulse {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+</html>

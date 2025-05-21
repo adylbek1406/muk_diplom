@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Doctor Details{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ doctor.name }}</h2>
+    {% if doctor.image %}
+    <img src="{{ doctor.image.url }}" class="img-fluid mb-3" alt="{{ doctor.name }}">
+    {% endif %}
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Specialization:</strong> {{ doctor.specialization }}</li>
+        <li class="list-group-item"><strong>Experience:</strong> {{ doctor.experience }} years</li>
+        <li class="list-group-item"><strong>Phone:</strong> {{ doctor.phone_number }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ doctor.email }}</li>
+    </ul>
+</div>
+{% endblock %}

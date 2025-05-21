@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Consultation Requests</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Message</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for consultation in consultations %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ consultation.patient.username }}</td>
+                    <td>{{ consultation.doctor.name }}</td>
+                    <td>{{ consultation.message }}</td>
+                    <td>
+                        <span class="badge {% if consultation.status == 'approved' %}bg-success{% elif consultation.status == 'rejected' %}bg-danger{% else %}bg-warning text-dark{% endif %}">
+                            {{ consultation.status|capfirst }}
+                        </span>
+                    </td>
+                    <td>{{ consultation.created_at|date:"Y-m-d H:i" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="text-center">No consultation requests found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
