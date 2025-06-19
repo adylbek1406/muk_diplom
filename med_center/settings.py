@@ -1,26 +1,22 @@
 from pathlib import Path
 import os
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 MEDIA = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = 'django-insecure-rt4@(j9mdegjl*8z8*)$fryh69*#l4sh&k+ys!98t7-y%vkgdo'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
-    'jazzmin',
+    'jazzmin', # для админки
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -28,12 +24,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'corsheaders',
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'django_filters',
-    'drf_yasg',
-    'app',
+    'corsheaders', # для CORS
+    'rest_framework', # для DRF
+    'rest_framework_simplejwt',# для JWT токенов
+    'django_filters',# для фильтрации
+    'drf_yasg', # для документации
+    'app',# приложение
 ]
 
 REST_FRAMEWORK = {

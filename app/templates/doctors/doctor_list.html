@@ -2,7 +2,7 @@
 {% block title %}Doctors{% endblock %}
 {% block content %}
 <div class="container mt-5">
-    <h2 class="mb-4">Doctors</h2>
+    <h2 class="mb-4">Докторы</h2>
     <div class="row">
         {% for doctor in doctors %}
         <div class="col-md-4 mb-4">
@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ doctor.name }}</h5>
                     <p class="card-text">{{ doctor.specialization }}</p>
-                    <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-primary">View Details</a>
+                    <a href="{% url 'doctor_detail' doctor.id %}" class="btn btn-primary">Подробнее</a>
                 </div>
             </div>
         </div>

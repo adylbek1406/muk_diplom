@@ -40,7 +40,7 @@ class Appointment(models.Model):
     time = models.TimeField()
     status = models.CharField(
         max_length=20,
-        choices=[('pending', 'Pending'), ('confirmed', 'Confirmed'), ('cancelled', 'Cancelled')],
+        choices=[('Ожидание', 'Ожидание'), ('Подтверждено', 'Подтверждено'), ('Отменено', 'Отменено')],
         default='pending'
     )
 
@@ -65,7 +65,7 @@ class ConsultationRequest(models.Model):
     message = models.TextField()
     status = models.CharField(
         max_length=20,
-        choices=[('pending', 'Pending'), ('approved', 'Approved'), ('rejected', 'Rejected')],
+        choices=[('Ожидание', 'Ожидание'), ('Подтверждено', 'Подтверждено'), ('Отклонено', 'Отклонено')],
         default='pending'
     )
     created_at = models.DateTimeField(auto_now_add=True)
@@ -101,7 +101,7 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     status = models.CharField(
         max_length=20,
-        choices=[('pending', 'Pending'), ('completed', 'Completed'), ('failed', 'Failed')],
+        choices=[('Ожидание', 'Ожидание'), ('завершено', 'завершено'), ('отклонено', 'отклонено')],
         default='pending'
     )
     created_at = models.DateTimeField(auto_now_add=True)

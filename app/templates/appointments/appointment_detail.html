@@ -7,21 +7,21 @@
 <div class="container mt-4">
     <div class="card">
         <div class="card-header bg-primary text-white">
-            <h5 class="card-title mb-0">Appointment Detail</h5>
+            <h5 class="card-title mb-0">Подробная информация о приеме </h5>
         </div>
         <div class="card-body">
-            <p><strong>Patient:</strong> {{ appointment.patient }}</p>
-            <p><strong>Doctor:</strong> {{ appointment.doctor }}</p>
-            <p><strong>Date:</strong> {{ appointment.date }}</p>
-            <p><strong>Time:</strong> {{ appointment.time }}</p>
-            <p><strong>Status:</strong>
+            <p><strong>Пациент:</strong> {{ appointment.patient }}</p>
+            <p><strong>Доктор:</strong> {{ appointment.doctor }}</p>
+            <p><strong>Дата:</strong> {{ appointment.date }}</p>
+            <p><strong>Время:</strong> {{ appointment.time }}</p>
+            <p><strong>Статус:</strong>
                 <span class="badge {% if appointment.status == 'confirmed' %}bg-success{% elif appointment.status == 'cancelled' %}bg-danger{% else %}bg-secondary{% endif %}">
                     {{ appointment.get_status_display }}
                 </span>
             </p>
         </div>
         <div class="card-footer text-end">
-            <a href="{% url 'appointment_list' %}" class="btn btn-outline-secondary">Back to List</a>
+            <a href="{% url 'appointment_list' %}" class="btn btn-outline-secondary">Назад</a>
         </div>
     </div>
 </div>

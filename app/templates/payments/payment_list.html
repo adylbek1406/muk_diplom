@@ -2,17 +2,17 @@
 {% block title %}Payments{% endblock %}
 
 {% block content %}
-<h2 class="text-center mb-4">Payments</h2>
+<h2 class="text-center mb-4">Платежи</h2>
 
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
         <tr>
             <th>ID</th>
-            <th>Patient</th>
-            <th>Doctor</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Created At</th>
+            <th>Пациент</th>
+            <th>Доктор</th>
+            <th>Сумма</th>
+            <th>Статус</th>
+            <th>Дата</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,7 @@
             <td>{{ payment.id }}</td>
             <td>{{ payment.patient }}</td>
             <td>{{ payment.doctor }}</td>
-            <td>${{ payment.amount }}</td>
+            <td>{{ payment.amount }} сом</td>
             <td>{{ payment.status }}</td>
             <td>{{ payment.created_at }}</td>
         </tr>
